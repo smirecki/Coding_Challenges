@@ -1,5 +1,4 @@
 //Sudoku
-
 //CodEval version
 
 var fs  = require("fs");
