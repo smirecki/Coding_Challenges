@@ -1,0 +1,64 @@
+//seek notes...
+
+General plan:
+1) read input line
+2) regex check if line contains vaild ip address
+3) save vaild IP address
+4) continue reading lines and saving IPs
+
+5) reveiw IPs and find which is comes up the most
+6) output that ip address
+
+
+Breaking it up:
+
+1) read line, check if it's a vaild IP and console.log it...
+
+1.0.0.0 to 255.255.255.254. 
+
+http://www.regular-expressions.info/examples.html
+
+\B(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\B
+
+========================
+
+\B(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\B
+
+==========================================
+\B(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\B
+========================================
+var fs  = require("fs");
+fs.readFileSync(process.argv[2]).toString().split('\n').forEach(function (line) {
+    if (line !== "") {
+
+        var i = 0;
+        var counter = 0;
+        var regexp = "[a-zA-Z]";
+        var rollString = "";
+
+        var lineArray = line.split("");
+
+        for (i = 0; i < line.length; ++i) {
+            var str = lineArray[i];
+
+            if (str.match(regexp)) { //check if a letter
+                if (counter % 2 === 0) { //check and make upper
+                    str = str.toUpperCase();
+                    rollString = rollString + str;
+                    counter++;
+                } else {
+                    str = str.toLowerCase(); // make lower
+                    rollString = rollString + str;
+                    counter++;
+                }
+            } else {
+                rollString = rollString + str; // not letter
+            }
+    
+    }
+console.log(rollString);
+
+    }
+});
+=========================================
+
