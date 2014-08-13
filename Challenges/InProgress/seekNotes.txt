@@ -1,5 +1,7 @@
 //seek notes...
 
+https://www.codeeval.com/open_challenges/137/
+
 General plan:
 1) read input line
 2) regex check if line contains vaild ip address
@@ -61,4 +63,13 @@ console.log(rollString);
     }
 });
 =========================================
+
+1) remove ' from line input, as it causes errors  // http://jsfiddle.net/adzvv601/
+    var re = /'/gi;
+    var str = "334343'dfasd";
+    var newstr = str.replace(re, "@");
+    console.log(newstr);
+2) simple regex for 0.0.0.0 - 999.999.999.999
+    var re6 =/\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/;
+3) Check if ip is vaild
 
