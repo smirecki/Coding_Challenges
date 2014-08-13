@@ -1,4 +1,4 @@
-// Codeval - SEEK FOR AN INTRUDER
+// Codeeval - SEEK FOR AN INTRUDER
 
 var fs  = require("fs");
 fs.readFileSync(process.argv[2]).toString().split('\n').forEach(function (line) {
