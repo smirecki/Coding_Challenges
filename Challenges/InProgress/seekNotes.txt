@@ -16,7 +16,7 @@ Breaking it up:
 
 1) read line, check if it's a vaild IP and console.log it...
 
-1.0.0.0 to 255.255.255.254. 
+0.0.0.0 to 255.255.255.254. 
 
 http://www.regular-expressions.info/examples.html
 
