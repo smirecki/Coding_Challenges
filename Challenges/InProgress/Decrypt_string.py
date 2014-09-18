@@ -43,4 +43,10 @@ import ast
 foo = ast.literal_eval("{'x':1, 'y':2}")
 print foo
 #{'y': 2, 'x': 1}
+
+
+"Decoded via - http://rumkin.com/tools/cipher/numbers.php
+01,02,..."AVV KNNYC CMAYM CNNRSUB AM XSRUSBQM FMQOGAS" # Letter to numbers
+
+
 """
