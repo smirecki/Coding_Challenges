@@ -1,0 +1,216 @@
+// ------------------ INPUT
+// make the message
+var msg = '012222 1114142503 0313012513 03141418192102 0113 2419182119021713 06131715070119';
+// make an alphabet lookup
+var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+// make the key lookup
+var key = 'BHISOECRTMGWYVALUZDNFJKPQX';
+var value_key = 0;
+var char_decrypt = '';
+var char_key = '';
+var decrypted_string = '';
+// parse out the message into an array of vars
+for (var i = 0; i < msg.length; i = i + 2) {
+    if (msg.charAt(i) != ' ') {
+        console.log( "i: " + i);
+        char_key = chars.substr(parseInt(msg.substr(i, 2)), 1);
+        console.log( "char_key: " + char_key);
+        value_key = key.indexOf(char_key);
+        console.log( "value_key: " + value_key);
+        char_decrypt = chars.substr(value_key, 1);
+        console.log( "char_decrypt: " + char_decrypt);
+        decrypted_string = decrypted_string + char_decrypt;
+        console.log( "decrypted_string: " + decrypted_string);
+    } else {
+        decrypted_string = decrypted_string + ' ';
+        i--;
+    }
+}
+console.log(decrypted_string);
+
+// ------------------  OUTPUT
+char_key: B (index):37
+value_key: 0 (index):39
+char_decrypt: A (index):41
+decrypted_string: A (index):43
+i: 2 (index):35
+char_key: W (index):37
+value_key: 11 (index):39
+char_decrypt: L (index):41
+decrypted_string: AL (index):43
+i: 4 (index):35
+char_key: W (index):37
+value_key: 11 (index):39
+char_decrypt: L (index):41
+decrypted_string: ALL (index):43
+i: 7 (index):35
+char_key: L (index):37
+value_key: 15 (index):39
+char_decrypt: P (index):41
+decrypted_string: ALL P (index):43
+i: 9 (index):35
+char_key: O (index):37
+value_key: 4 (index):39
+char_decrypt: E (index):41
+decrypted_string: ALL PE (index):43
+i: 11 (index):35
+char_key: O (index):37
+value_key: 4 (index):39
+char_decrypt: E (index):41
+decrypted_string: ALL PEE (index):43
+i: 13 (index):35
+char_key: Z (index):37
+value_key: 17 (index):39
+char_decrypt: R (index):41
+decrypted_string: ALL PEER (index):43
+i: 15 (index):35
+char_key: D (index):37
+value_key: 18 (index):39
+char_decrypt: S (index):41
+decrypted_string: ALL PEERS (index):43
+i: 18 (index):35
+char_key: D (index):37
+value_key: 18 (index):39
+char_decrypt: S (index):41
+decrypted_string: ALL PEERS S (index):43
+i: 20 (index):35
+char_key: N (index):37
+value_key: 19 (index):39
+char_decrypt: T (index):41
+decrypted_string: ALL PEERS ST (index):43
+i: 22 (index):35
+char_key: B (index):37
+value_key: 0 (index):39
+char_decrypt: A (index):41
+decrypted_string: ALL PEERS STA (index):43
+i: 24 (index):35
+char_key: Z (index):37
+value_key: 17 (index):39
+char_decrypt: R (index):41
+decrypted_string: ALL PEERS STAR (index):43
+i: 26 (index):35
+char_key: N (index):37
+value_key: 19 (index):39
+char_decrypt: T (index):41
+decrypted_string: ALL PEERS START (index):43
+i: 29 (index):35
+char_key: D (index):37
+value_key: 18 (index):39
+char_decrypt: S (index):41
+decrypted_string: ALL PEERS START S (index):43
+i: 31 (index):35
+char_key: O (index):37
+value_key: 4 (index):39
+char_decrypt: E (index):41
+decrypted_string: ALL PEERS START SE (index):43
+i: 33 (index):35
+char_key: O (index):37
+value_key: 4 (index):39
+char_decrypt: E (index):41
+decrypted_string: ALL PEERS START SEE (index):43
+i: 35 (index):35
+char_key: S (index):37
+value_key: 3 (index):39
+char_decrypt: D (index):41
+decrypted_string: ALL PEERS START SEED (index):43
+i: 37 (index):35
+char_key: T (index):37
+value_key: 8 (index):39
+char_decrypt: I (index):41
+decrypted_string: ALL PEERS START SEEDI (index):43
+i: 39 (index):35
+char_key: V (index):37
+value_key: 13 (index):39
+char_decrypt: N (index):41
+decrypted_string: ALL PEERS START SEEDIN (index):43
+i: 41 (index):35
+char_key: C (index):37
+value_key: 6 (index):39
+char_decrypt: G (index):41
+decrypted_string: ALL PEERS START SEEDING (index):43
+i: 44 (index):35
+char_key: B (index):37
+value_key: 0 (index):39
+char_decrypt: A (index):41
+decrypted_string: ALL PEERS START SEEDING A (index):43
+i: 46 (index):35
+char_key: N (index):37
+value_key: 19 (index):39
+char_decrypt: T (index):41
+decrypted_string: ALL PEERS START SEEDING AT (index):43
+i: 49 (index):35
+char_key: Y (index):37
+value_key: 12 (index):39
+char_decrypt: M (index):41
+decrypted_string: ALL PEERS START SEEDING AT M (index):43
+i: 51 (index):35
+char_key: T (index):37
+value_key: 8 (index):39
+char_decrypt: I (index):41
+decrypted_string: ALL PEERS START SEEDING AT MI (index):43
+i: 53 (index):35
+char_key: S (index):37
+value_key: 3 (index):39
+char_decrypt: D (index):41
+decrypted_string: ALL PEERS START SEEDING AT MID (index):43
+i: 55 (index):35
+char_key: V (index):37
+value_key: 13 (index):39
+char_decrypt: N (index):41
+decrypted_string: ALL PEERS START SEEDING AT MIDN (index):43
+i: 57 (index):35
+char_key: T (index):37
+value_key: 8 (index):39
+char_decrypt: I (index):41
+decrypted_string: ALL PEERS START SEEDING AT MIDNI (index):43
+i: 59 (index):35
+char_key: C (index):37
+value_key: 6 (index):39
+char_decrypt: G (index):41
+decrypted_string: ALL PEERS START SEEDING AT MIDNIG (index):43
+i: 61 (index):35
+char_key: R (index):37
+value_key: 7 (index):39
+char_decrypt: H (index):41
+decrypted_string: ALL PEERS START SEEDING AT MIDNIGH (index):43
+i: 63 (index):35
+char_key: N (index):37
+value_key: 19 (index):39
+char_decrypt: T (index):41
+decrypted_string: ALL PEERS START SEEDING AT MIDNIGHT (index):43
+i: 66 (index):35
+char_key: G (index):37
+value_key: 10 (index):39
+char_decrypt: K (index):41
+decrypted_string: ALL PEERS START SEEDING AT MIDNIGHT K (index):43
+i: 68 (index):35
+char_key: N (index):37
+value_key: 19 (index):39
+char_decrypt: T (index):41
+decrypted_string: ALL PEERS START SEEDING AT MIDNIGHT KT (index):43
+i: 70 (index):35
+char_key: R (index):37
+value_key: 7 (index):39
+char_decrypt: H (index):41
+decrypted_string: ALL PEERS START SEEDING AT MIDNIGHT KTH (index):43
+i: 72 (index):35
+char_key: P (index):37
+value_key: 23 (index):39
+char_decrypt: X (index):41
+decrypted_string: ALL PEERS START SEEDING AT MIDNIGHT KTHX (index):43
+i: 74 (index):35
+char_key: H (index):37
+value_key: 1 (index):39
+char_decrypt: B (index):41
+decrypted_string: ALL PEERS START SEEDING AT MIDNIGHT KTHXB (index):43
+i: 76 (index):35
+char_key: B (index):37
+value_key: 0 (index):39
+char_decrypt: A (index):41
+decrypted_string: ALL PEERS START SEEDING AT MIDNIGHT KTHXBA (index):43
+i: 78 (index):35
+char_key: T (index):37
+value_key: 8 (index):39
+char_decrypt: I (index):41
+decrypted_string: ALL PEERS START SEEDING AT MIDNIGHT KTHXBAI (index):43
+ALL PEERS START SEEDING AT MIDNIGHT KTHXBAI (index):49
