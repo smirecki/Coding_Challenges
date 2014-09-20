@@ -39,6 +39,8 @@ keyed_alphabet: "BHISOECRTMGWYVALUZDNFJKPQX"
 message = "012222 1114142503 0313012513 03141418192102 0113 2419182119021713 06131715070119",
 keyed_alphabet = "BHISOECRTMGWYVALUZDNFJKPQX"
 
+"ALL PEERS START SEEDING AT MIDNIGHT KTHXBAI"
+
 import ast
 foo = ast.literal_eval("{'x':1, 'y':2}")
 print foo
@@ -48,5 +50,39 @@ print foo
 "Decoded via - http://rumkin.com/tools/cipher/numbers.php
 01,02,..."AVV KNNYC CMAYM CNNRSUB AM XSRUSBQM FMQOGAS" # Letter to numbers
 
+
+#JS Example----------------------
+
+// make the message
+var msg = '012222 1114142503 0313012513 03141418192102 0113 2419182119021713 06131715070119';
+ 
+// make an alphabet lookup
+var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+ 
+// make the key lookup
+var key   = 'BHISOECRTMGWYVALUZDNFJKPQX';
+ 
+var value_key = 0;
+var char_decrypt = '';
+var char_key = '';
+ 
+var decrypted_string = '';
+ 
+// parse out the message into an array of vars
+for (var i=0;i<msg.length;i=i+2) {
+    if(msg.charAt(i) != ' ') {
+        char_key = chars.substr(parseInt(msg.substr(i,2)),1);
+        value_key = key.indexOf(char_key);
+        char_decrypt = chars.substr(value_key,1);
+        decrypted_string = decrypted_string + char_decrypt;
+    } else {
+        decrypted_string = decrypted_string + ' ';
+        i--;
+    }
+}
+ 
+console.log(decrypted_string);
+
+#-----------------------------
 
 """
