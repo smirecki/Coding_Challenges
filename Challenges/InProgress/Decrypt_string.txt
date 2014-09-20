@@ -14,6 +14,235 @@ for (var i = 0; i < msg.length; i = i + 2) {
     if (msg.charAt(i) != ' ') {
         console.log( "i: " + i);
         char_key = chars.substr(parseInt(msg.substr(i, 2)), 1);
+        /*
+        	
+        	for(var i = 0; i < msg.length; i = i + 2)
+        		Step 1:	Start for loop.
+        				Continue while i is less than the length of the message.
+        				Increment i by 2 if the string value isn't a space and if so increment i by 1.
+
+        	char_key = chars.substr(parseInt(msg.substr(i, 2)), 1);
+        		Step 2: msg.substr(i, 2)
+
+
+        			substr : str.substring(indexA[, indexB])
+        				- return a substring(A to B) of the requested str
+        				- A is greater than B more often, "If indexA is larger than indexB, then the effect of substring is as if the two arguments were swapped; for example, str.substring(1, 0) == str.substring(0, 1)." 
+        				indexA = START 
+        				indexB = END	 
+        			https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring
+
+        			parseInt : parseInt(string, radix);
+        				String = the string to be parsed
+        				radix = the base (i.e. base 10, base 2)
+        					http://en.wikipedia.org/wiki/Radix
+        			https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt
+
+        			=========== Sub break down of loop ===================================
+
+        			========== via test input = START ==================================
+        			// make the message
+var msg = '012222 1114142503 0313012513 03141418192102 0113 2419182119021713 06131715070119';
+// make an alphabet lookup
+var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+// make the key lookup
+var key = 'BHISOECRTMGWYVALUZDNFJKPQX';
+var value_key = 0;
+var char_decrypt = '';
+var char_key = '';
+var decrypted_string = '';
+// parse out the message into an array of vars
+for (var i = 0; i < msg.length; i = i + 2) {
+    if (msg.charAt(i) != ' ') {
+        console.log( "i: " + i);
+        char_keyA = msg.substr(i, 2); // inner most
+            console.log("char_keyA  " + char_keyA);
+        char_keyB = parseInt(char_keyA, 1); // parseInt - second layer
+            console.log("char_keyB  " + char_keyB);
+        char_keyC = chars.substr(char_keyB);
+            console.log("char_keyC  " + char_keyC);
+               
+        //char_key = chars.substr(parseInt(msg.substr(i, 2)), 1);
+        
+        
+        //console.log( "char_key: " + char_key);
+        //value_key = key.indexOf(char_key);
+        //console.log( "value_key: " + value_key);
+        //char_decrypt = chars.substr(value_key, 1);
+        //console.log( "char_decrypt: " + char_decrypt);
+        //decrypted_string = decrypted_string + char_decrypt;
+        //console.log( "i: " + i + "   char_key: " + char_key + "    value_key: " + value_key + "   char_decrypt: " + char_decrypt + "   decrypted_string: " + decrypted_string);
+        
+        
+    } else {
+        decrypted_string = decrypted_string + ' ';
+        i--;
+    }
+}
+//console.log(decrypted_string);
+
+        			=========== test input = END ======================================
+
+keys:	'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+		'BHISOECRTMGWYVALUZDNFJKPQX';
+
+        			==================================================================
+
+i: 0 (index):35
+char_keyA  01 (index):37
+char_keyB  1 (index):39
+char_keyC  B (index):41
+i: 2 (index):35
+char_keyA  22 (index):37
+char_keyB  22 (index):39
+char_keyC  W (index):41
+i: 4 (index):35
+char_keyA  22 (index):37
+char_keyB  22 (index):39
+char_keyC  W (index):41
+i: 7 (index):35
+char_keyA  11 (index):37
+char_keyB  11 (index):39
+char_keyC  L (index):41
+i: 9 (index):35
+char_keyA  14 (index):37
+char_keyB  14 (index):39
+char_keyC  O (index):41
+i: 11 (index):35
+char_keyA  14 (index):37
+char_keyB  14 (index):39
+char_keyC  O (index):41
+i: 13 (index):35
+char_keyA  25 (index):37
+char_keyB  25 (index):39
+char_keyC  Z (index):41
+i: 15 (index):35
+char_keyA  03 (index):37
+char_keyB  3 (index):39
+char_keyC  D (index):41
+i: 18 (index):35
+char_keyA  03 (index):37
+char_keyB  3 (index):39
+char_keyC  D (index):41
+i: 20 (index):35
+char_keyA  13 (index):37
+char_keyB  13 (index):39
+char_keyC  N (index):41
+i: 22 (index):35
+char_keyA  01 (index):37
+char_keyB  1 (index):39
+char_keyC  B (index):41
+i: 24 (index):35
+char_keyA  25 (index):37
+char_keyB  25 (index):39
+char_keyC  Z (index):41
+i: 26 (index):35
+char_keyA  13 (index):37
+char_keyB  13 (index):39
+char_keyC  N (index):41
+i: 29 (index):35
+char_keyA  03 (index):37
+char_keyB  3 (index):39
+char_keyC  D (index):41
+i: 31 (index):35
+char_keyA  14 (index):37
+char_keyB  14 (index):39
+char_keyC  O (index):41
+i: 33 (index):35
+char_keyA  14 (index):37
+char_keyB  14 (index):39
+char_keyC  O (index):41
+i: 35 (index):35
+char_keyA  18 (index):37
+char_keyB  18 (index):39
+char_keyC  S (index):41
+i: 37 (index):35
+char_keyA  19 (index):37
+char_keyB  19 (index):39
+char_keyC  T (index):41
+i: 39 (index):35
+char_keyA  21 (index):37
+char_keyB  21 (index):39
+char_keyC  V (index):41
+i: 41 (index):35
+char_keyA  02 (index):37
+char_keyB  2 (index):39
+char_keyC  C (index):41
+i: 44 (index):35
+char_keyA  01 (index):37
+char_keyB  1 (index):39
+char_keyC  B (index):41
+i: 46 (index):35
+char_keyA  13 (index):37
+char_keyB  13 (index):39
+char_keyC  N (index):41
+i: 49 (index):35
+char_keyA  24 (index):37
+char_keyB  24 (index):39
+char_keyC  Y (index):41
+i: 51 (index):35
+char_keyA  19 (index):37
+char_keyB  19 (index):39
+char_keyC  T (index):41
+i: 53 (index):35
+char_keyA  18 (index):37
+char_keyB  18 (index):39
+char_keyC  S (index):41
+i: 55 (index):35
+char_keyA  21 (index):37
+char_keyB  21 (index):39
+char_keyC  V (index):41
+i: 57 (index):35
+char_keyA  19 (index):37
+char_keyB  19 (index):39
+char_keyC  T (index):41
+i: 59 (index):35
+char_keyA  02 (index):37
+char_keyB  2 (index):39
+char_keyC  C (index):41
+i: 61 (index):35
+char_keyA  17 (index):37
+char_keyB  17 (index):39
+char_keyC  R (index):41
+i: 63 (index):35
+char_keyA  13 (index):37
+char_keyB  13 (index):39
+char_keyC  N (index):41
+i: 66 (index):35
+char_keyA  06 (index):37
+char_keyB  6 (index):39
+char_keyC  G (index):41
+i: 68 (index):35
+char_keyA  13 (index):37
+char_keyB  13 (index):39
+char_keyC  N (index):41
+i: 70 (index):35
+char_keyA  17 (index):37
+char_keyB  17 (index):39
+char_keyC  R (index):41
+i: 72 (index):35
+char_keyA  15 (index):37
+char_keyB  15 (index):39
+char_keyC  P (index):41
+i: 74 (index):35
+char_keyA  07 (index):37
+char_keyB  7 (index):39
+char_keyC  H (index):41
+i: 76 (index):35
+char_keyA  01 (index):37
+char_keyB  1 (index):39
+char_keyC  B (index):41
+i: 78 (index):35
+char_keyA  19 (index):37
+char_keyB  19 (index):39
+char_keyC  T (index):41
+
+
+        			==================== End Break down =================================
+
+
+
+        */
         console.log( "char_key: " + char_key);
         value_key = key.indexOf(char_key);
         console.log( "value_key: " + value_key);
@@ -29,30 +258,36 @@ for (var i = 0; i < msg.length; i = i + 2) {
 console.log(decrypted_string);
 
 // ------------------  OUTPUT
+i: 0 (index):35
 char_key: B (index):37
 value_key: 0 (index):39
 char_decrypt: A (index):41
 decrypted_string: A (index):43
+
 i: 2 (index):35
 char_key: W (index):37
 value_key: 11 (index):39
 char_decrypt: L (index):41
 decrypted_string: AL (index):43
+
 i: 4 (index):35
 char_key: W (index):37
 value_key: 11 (index):39
 char_decrypt: L (index):41
 decrypted_string: ALL (index):43
+
 i: 7 (index):35
 char_key: L (index):37
 value_key: 15 (index):39
 char_decrypt: P (index):41
 decrypted_string: ALL P (index):43
+
 i: 9 (index):35
 char_key: O (index):37
 value_key: 4 (index):39
 char_decrypt: E (index):41
 decrypted_string: ALL PE (index):43
+
 i: 11 (index):35
 char_key: O (index):37
 value_key: 4 (index):39
