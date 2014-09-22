@@ -67,6 +67,12 @@ for (var i = 0; i < msg.length; i = i + 2) {
         
         //console.log( "char_key: " + char_key);
         //value_key = key.indexOf(char_key);
+
+/*
+str.indexOf(searchValue[, fromIndex])
+*/
+
+
         //console.log( "value_key: " + value_key);
         //char_decrypt = chars.substr(value_key, 1);
         //console.log( "char_decrypt: " + char_decrypt);
