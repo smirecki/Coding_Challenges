@@ -7,6 +7,8 @@ Can you find a subset of these areas where a total of exactly 100,000,000 people
 
 25! = 15,511,210,043,330,985,984,000,000
 26! = "The factorial of 26 is 4.03291461 x 10^26. The factorial of 4.03291461 x 10^26 would be an immeasurably huge number."
+
+Not a factorial problem. ABCDEFG != GFEDCBA , but 1+2+3+4 === 4+3+2+1
 ====
 18,897,109
 12,828,837
