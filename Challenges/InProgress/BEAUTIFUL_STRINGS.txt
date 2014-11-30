@@ -1,0 +1,126 @@
+NOTES:
+
+https://www.codeeval.com/open_challenges/83/
+
+abbccc = 152
+a = 24	 6
+b = 25	 7
+c = 26	 8
+d = 1	 9
+e = 2	10
+f = 3	11
+g = 4	12
+h = 5	13
+i = 6	14
+j = 7	15
+k = 8	16
+l = 9	17
+m = 10	18
+n = 11	19
+o = 12	20
+p = 13	21
+q = 14	22
+r = 15	23
+s = 16	24
+t = 17	25
+u = 18	26
+v = 19	 5
+w = 20	 4
+x = 21	 3
+y = 22	 2
+z = 23	 1
+
+128-152
+26*6=156
+
+==try method as above
+ignor	6+4+11+12+15	= 48
+epunc	2+13+18+11+26	= 70
+tuati	17+18+24+17+6	= 82
+onple	12+11+13+9+2	= 47
+ase	24+16+2		= 42
+should be 491 is 289
+
+== method 2 - last letter in giving alphbet order is 26
+
+ignor	14+12+19+20+23	= 88
+epunc	2+21+26+19	= 68
+tuati	25+5+6+25+14	= 75
+onple	20+19+21+17+10	= 87
+ase	6+24+10		= 40
+
+result 358
+
+== method 3 - last letter is greatest and the previous letter is one lower  
+
+ii	= 19+19
+g	= 14
+nnn	= 21+21+21
+oo	= 20+20
+r 	= 15
+eee	= 26+26+26 
+pp	= 22
+uu	= 17+17
+c	= 16
+tt	= 18+18
+aa	= 24+24
+l	= 23
+s	= 25
+
+452
+
+== method 4 - largest group = 26 per, largest -1 = 25
+nope
+=== method 5, like 4, but numbers reduce for each leter
+
+nnn	= 26+26+26 = 78
+eee	= 25+25+25 = 75
+ii	= 24+24
+oo	= 23+23
+pp	= 22+22
+uu	= 21+21
+tt	= 20+20
+aa	= 19+19	= 258
+g	= 18
+r	= 17
+c	= 16
+l	= 15
+s	= 14	= 80
+491
+
+============================
+So I just go consult Professor Dalves 646
+
+sssss = 26*5 = 130
+ooooo = 25*5 = 125
+ee = 24*2 = 48
+uu = 23*2 = 46
+tt = 22*2 = 44
+ll = 21*2 = 42
+rr = 20*2 = 40
+i = 19
+j = 18
+g = 17
+c = 16
+n = 15
+p = 14
+f = 13
+d = 12
+a = 11
+v = 10
+
+620
+
+
+
+
+
+
+
+
+
+
+
+
+
+
